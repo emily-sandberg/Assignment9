@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "View Movies";
+}
+
+@model IEnumerable<Assignment9.Models.Movie>
+
+<br />
+<div class="text-center">
+    <h2>Joel's Film Collection</h2>
+</div>
+
+<!--Print out films from database-->
+
+@foreach (Assignment9.Models.Movie x in Model)
+{
+    @x.Title
+}

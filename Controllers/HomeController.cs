@@ -23,6 +23,29 @@ namespace Assignment9.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult AddMovie()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddMovie(Movie movie)
+        {
+            //add movie to database
+            return View("Confirmation", movie);
+        }
+
+        public IActionResult ViewMovies()
+        {
+            return View(); //pass in what's stored in the db (tempstorage.applications)
+        }
+
+        public IActionResult Podcast()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

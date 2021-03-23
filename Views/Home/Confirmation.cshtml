@@ -1,0 +1,21 @@
+﻿@model Assignment9.Models.Movie
+
+
+<br />
+<br />
+<br />
+<div class="text-center">
+    <h3>Thank you for submitting a movie to the collection.</h3>
+</div>
+<br />
+
+<div class="text-center">
+    @if (Model.Title == "Independence Day")
+    {
+        @:Sorry, Joel doesn't like that movie. #awkward
+    }
+    else
+    {
+        @:Joel has deemed "@Model.Title" worthy to enter his collection.
+    }
+</div>

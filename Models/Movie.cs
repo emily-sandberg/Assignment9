@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Assignment9.Models
 {
     public class Movie
     {
         [Key]
-        public int MovieID { get; set; }
+        public int MovieId { get; set; }
 
         [Required(ErrorMessage = "Please enter the category")]
         public string Category { get; set; }

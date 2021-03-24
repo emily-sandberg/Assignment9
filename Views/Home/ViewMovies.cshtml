@@ -2,7 +2,7 @@
     ViewData["Title"] = "View Movies";
 }
 
-@model IEnumerable<Assignment9.Models.Movie>
+@model IEnumerable<Movie>
 
 <br />
 <div class="text-center">
@@ -11,7 +11,31 @@
 
 <!--Print out films from database-->
 
-@foreach (Assignment9.Models.Movie x in Model)
+@foreach (var x in Model)
 {
-    @x.Title
+    <div class="card card-outline-primary m-1 p-1 card bg-light mb-3">
+        <br />
+        <div class="ml-4">
+            <h4>
+                @x.Title
+            </h4>
+            <br />
+            <div class="text-muted">
+                <p>@x.Category</p>
+                <p>@x.Year</p>
+                <p>@x.Rating</p>
+                @if (x.Edited == true)
+                {
+                    <p>This movie has been edited.</p>
+                }
+                else
+                {
+                    <p>This movie hasn't been edited.</p>
+                }
+                <br />
+                <p>Lent to: @x.LentTo</p>
+                <p>Additional Notes: @x.Notes</p>
+            </div>
+        </div>
+    </div>
 }

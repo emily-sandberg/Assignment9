@@ -40,14 +40,52 @@ namespace Assignment9.Controllers
             {
                 context.Movies.Add(movie);
                 context.SaveChanges();
-                //return View("Confirmation", movie);
+                return RedirectToAction("AddMovie");
             }
-            return View();
+            else
+            { 
+                return View();
+            }
+        }
+
+
+
+        // Edits the movie in the database on the post
+        [HttpPost]
+        public IActionResult editMovieForm(int movieID)
+        {
+            Movie mov = context.Movies.Find(movieID);
+            return View(mov);
+        }
+
+        //post method for editing the movie
+        [HttpPost]
+        public IActionResult editMovie(Movie mov)
+        {
+            Movie OldMov = context.Movies.Find(mov.MovieId);
+            context.Movies.Remove(OldMov);
+            context.Movies.Add(mov);
+            context.SaveChanges();
+            return RedirectToAction("ViewMovies");
+        }
+
+
+
+
+        // Deletes movie from the database
+        [HttpPost]
+        public IActionResult DeleteMovie(int movieId)
+        {
+            Movie movie = context.Movies.Single(m => m.MovieId == movieId);
+            context.Movies.Remove(movie);
+            context.SaveChanges();
+            return RedirectToAction("ViewMovies");
         }
 
         public IActionResult ViewMovies()
         {
-            return View(context.Movies); //pass in what's stored in the db
+           // return View(context.Movies); //pass in what's stored in the db
+            return View(context.Movies.Where(m => m.Title.ToLower() != "independence day"));
         }
 
         public IActionResult Podcast()

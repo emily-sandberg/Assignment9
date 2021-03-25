@@ -78,3 +78,4 @@
 /Users/esandberg/Projects/Assignment9/Assignment9/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/e_sqlite3.dll
 /Users/esandberg/Projects/Assignment9/Assignment9/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/e_sqlite3.dll
 /Users/esandberg/Projects/Assignment9/Assignment9/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/e_sqlite3.dll
+/Users/esandberg/Projects/Assignment9/Assignment9/obj/Debug/netcoreapp3.1/Razor/Views/Home/editMovieForm.cshtml.g.cs
